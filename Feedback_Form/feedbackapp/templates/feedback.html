@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex - IT Training and Student Feedback Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Main Body Background - Full Dark Theme */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19 !important; /* Deep Cinematic Dark */
+            min-height: 100vh;
+            color: #f8fafc !important;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        
+        /* Dashboard Container Card */
+        .main-card {
+            background-color: #111827 !important; /* Dark Slate Navy Card */
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Table Wrapper Box */
+        .table-container {
+            background-color: #111827 !important;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Override Bootstrap Default Table Backgrounds */
+        .table {
+            margin-bottom: 0;
+            background-color: transparent !important;
+            --bs-table-bg: transparent !important;
+            --bs-table-color: #ffffff !important;
+        }
+
+        /* Headers Styling */
+        .table thead th {
+            background-color: #1e1b4b !important; /* Deep Royal Indigo */
+            color: #a5b4fc !important; /* Soft Purple/Indigo Accent */
+            padding: 18px 16px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Rows Hover Effect and Control */
+        .table tbody tr {
+            background-color: #111827 !important;
+            transition: background-color 0.2s ease;
+        }
+        
+        .table tbody tr:hover {
+            background-color: #1f2937 !important; /* Subtle highlight on row hover */
+        }
+
+        .table tbody td {
+            padding: 18px 16px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important; /* Strict white override for dynamic texts */
+        }
+
+        /* User Profile Initials Circle */
+        .avatar-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: #ffffff !important;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Full Name Output */
+        .user-name {
+            font-weight: 600;
+            color: #ffffff !important;
+            text-transform: capitalize;
+            font-size: 0.95rem;
+        }
+
+        /* Message Box Style */
+        .feedback-message {
+            color: #cbd5e1 !important; /* High contrast soft-grey text for messages */
+            font-size: 0.95rem;
+        }
+
+        /* Verified User Pill Badge */
+        .badge-status {
+            background-color: rgba(16, 185, 129, 0.12) !important;
+            color: #34d399 !important;
+            border: 1px solid rgba(16, 185, 129, 0.3) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Primary Call-to-Action Add Review Button */
+        .btn-custom {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+            color: #ffffff !important;
+        }
+
+        /* Modern Crimson Red Delete Action Button */
+        .btn-delete {
+            background-color: rgba(239, 68, 68, 0.1) !important;
+            color: #f87171 !important;
+            border: 1px solid rgba(239, 68, 68, 0.3) !important;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-delete:hover {
+            background-color: #ef4444 !important;
+            color: white !important;
+            border-color: #ef4444 !important;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-4">
+        <div class="main-card p-4 p-md-5">
+            
+            <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+                <<!-- Header Section -->
+<div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+    <div>
+        <h1 class="fw-bold text-white mb-1">Codex - IT Training and Student Feedback Portal</h1>
+        <p class="text-muted mb-0">Manage and analyze live student course evaluations</p>
+    </div>
+    <a href="/feedbackapp/form/" class="btn-custom">+ Add New Review</a>
+</div>
+
+            <div class="table-container shadow-lg">
+                <div class="table-responsive">
+                    <table class="table text-start align-middle">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">User</th>
+                                <th style="width: 22%;">Full Name</th>
+                                <th style="width: 40%;">Message</th>
+                                <th style="width: 15%;">Account Status</th>
+                                <th style="width: 13%; text-align: center;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in all_feedbacks %}
+                            <tr>
+                                <td>
+                                    <div class="avatar-circle">
+                                        {{ item.name|slice:":1" }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="user-name">{{ item.name }}</span>
+                                </td>
+                                <td>
+                                    <span class="feedback-message">"{{ item.feedback }}"</span>
+                                </td>
+                                <td>
+                                    <span class="badge-status">Verified User</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <a href="/feedbackapp/delete/{{ item.id }}/" class="btn-delete">Delete</a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center py-5 text-muted">
+                                    No reviews found in the system.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
