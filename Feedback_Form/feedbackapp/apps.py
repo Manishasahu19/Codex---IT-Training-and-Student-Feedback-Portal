@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class FeedbackappConfig(AppConfig):
-    name = 'feedbackapp'
+    name = 'Feedback_Form.feedbackapp'
