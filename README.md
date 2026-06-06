@@ -2,21 +2,21 @@
 
 A full-stack Course Evaluation and Student Feedback Tracking System designed for IT training bootcamps.
 
-## 🚀 Key Features
+##  Key Features
 - **Full CRUD Pipeline:** Live record insertion via student forms and real-time database deletion from the dashboard.
 - **Premium Dark UI:** Modern, high-contrast dark mode dashboard built using Bootstrap 5.
 - **Automated Avatars:** Dynamic string-slicing logic to automatically generate user profile avatars from student initials.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Backend:** Python, Django (MVT Architecture)
 - **Database:** SQLite3
 - **Frontend:** HTML5, CSS3, Bootstrap 5
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```text
 Feedback_Form/                  # Outer Container Folder
 ├── feedbackapp/               # Core Application (Views, Models, Routing)
